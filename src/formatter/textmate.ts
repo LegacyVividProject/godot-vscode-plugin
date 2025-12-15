@@ -109,6 +109,10 @@ function parse_token(token: Token) {
 	if (token.value === "preload") {
 		return;
 	}
+	if (token.value === "self") {
+		token.type = "variable";
+		return;
+	}
 	if (token.scopes.includes("keyword.language.gdscript")) {
 		token.type = "keyword";
 		return;
